@@ -2,7 +2,7 @@
 
 var defineProperty = require('./properties.js').defineProperty;
 
-var crypto = global.crypto || global.msCrypto;
+var crypto = global.crypto || global.msCrypto || require("crypto");
 if (!crypto || !crypto.getRandomValues) {
     console.log('WARNING: Missing strong random number source; using weak randomBytes');
     crypto = {
